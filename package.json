@@ -1,0 +1,45 @@
+{
+  "name": "gatsby-starter-landing-page",
+  "private": true,
+  "workspaces": [
+    ".",
+    "gatsby-theme-landing-page"
+  ],
+  "version": "1.0.0",
+  "description": "Gatsby landing page starter built with Contentful",
+  "scripts": {
+    "start": "gatsby develop",
+    "start:refresh": "ENABLE_GATSBY_REFRESH_ENDPOINT=true yarn start",
+    "refresh": "curl -X POST http://localhost:8000/__refresh",
+    "import:contentful:demo": "contentful space import --config .contentful/import-demo-config.json",
+    "import:contentful:model": "contentful space import --config .contentful/import-model-only-config.json",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-landing-page.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby-starter-landing-page/issues"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-landing-page#readme",
+  "dependencies": {
+    "gatsby": "^4.2.0",
+    "gatsby-theme-landing-page": "1.0.0-0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "^2.5.0"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
+  }
+}
